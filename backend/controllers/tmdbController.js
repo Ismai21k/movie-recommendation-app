@@ -1,5 +1,5 @@
 const axios = require('axios');
-const TMDB_API_KEY = process.env.TMDB_API_KEY;
+const TMDB_API_KEY = process.env.TMDB_API_KEY || 5000;
 const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
 const Movie = require('../models/moviemodels');
 const mongoose = require('mongoose');

@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000',
+  baseURL: 'https://movie-recommendation-app-ia3x.onrender.com/',
 });
 
 // Add JWT to every request if logged in
