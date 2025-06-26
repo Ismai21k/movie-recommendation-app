@@ -3,9 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const authRoutes = require('./routes/authRoutes')
-const authMiddleware = require('./middkeware/authMiddleware')
-const movieRoute = require('./routes/movieRoutes')
-
+const tmdRoute = require('./routes/tmdbRoutes')
 dotenv.config();
 
 const app = express();
@@ -26,8 +24,8 @@ mongoose.connect(process.env.mongo_url)
 
 });
 
-app.use('/api/auth', authRoutes)
-app.use('/api', movieRoute)
+app.use('/', authRoutes)
+app.use('/', tmdRoute)
 
 
 app.listen(process.env.port, ()=> {

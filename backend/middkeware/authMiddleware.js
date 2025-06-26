@@ -9,6 +9,7 @@ const protect = (req, res, next) => {
 
     try {
         const decode = jwt.verify(token, process.env.JWT_SECRET);//If a token is present, the middleware tries to verify it using the jsonwebtoken library and a secret key stored in the environment variable 
+        console.log(decode)
         req.user = decode;
         next();
         // If verification succeeds, the decoded token payload is attached to the req.user property, making user information available to subsequent middleware or route handlers.
